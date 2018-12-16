@@ -1,0 +1,15 @@
+﻿@model IEnumerable<Despensa.Models.Product>
+
+@{
+    ViewData["Title"] = "Purchase";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form asp-controller="Products" asp-action="InsertSearch" method="post">
+    <div class="col-lg-6">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search for food" name="productName">
+            <input id="submit" name="Submit" type="submit" value="Search" />
+        </div>
+    </div>
+</form>

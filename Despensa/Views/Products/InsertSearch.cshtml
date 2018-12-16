@@ -1,0 +1,132 @@
+﻿@model IEnumerable<Despensa.Models.Product>
+
+@{
+    ViewData["Title"] = "Purchase";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br>
+
+<div class="container">
+    <form asp-controller="Products" asp-action="InsertSearch" method="post">
+        <div class="col-lg-12">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for food" name="productName">
+                <span class="input-group-btn">
+                    <input class="btn btn-default" id="submit" name="Submit" type="submit" value="Search" />
+                </span>
+            </div>
+        </div>
+    </form>
+</div>
+
+<br>
+
+<div class="container">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="block image-main-section">
+                    <div class="row img-part">
+                        <form asp-controller="Products" asp-action="Buy" method="post">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="product">
+                                <img class="img-responsive img-display" src="@Html.DisplayFor(modelItem => item.Image_front_url)">
+                                <input type="hidden" name="Image_front_url" value="@item.Image_front_url" />
+                            </div>
+                            <div class="info">
+                                <div class="image-title">
+                                    <h3>@Html.DisplayFor(modelItem => item.Name_Product)</h3>
+                                    <input type="hidden" name="Name_Product" value="@item.Name_Product" />
+                                </div>
+                                <div class="nova_group">
+                                    <h>Nova Group:@Html.DisplayFor(modelItem => item.NovaGroup)</h>
+                                    <input type="hidden" name="NovaGroup" value="@item.NovaGroup" />
+                                </div>
+                            </div>
+                            <div class="add-cart-btn">
+                                    @if (User.Identity.IsAuthenticated)
+                                    {
+                                        <input type="submit" value="Buy" class="btn btn-success" />
+                                    }
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@*<br>
+    <div class="container">
+        @foreach (var item in Model)
+        {
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="block span3">
+                            <div class="product">
+                                <img src="@Html.DisplayFor(modelItem => item.Image_front_url)">
+                            </div>
+
+                            <form asp-controller="Products" asp-action="Buy" method="post">
+                                <div class="info">
+                                    <h4>@Html.DisplayFor(modelItem => item.Product_Name)</h4>
+                                    <span class="description">
+                                        Description or/and nutriscore
+                                    </span>
+                                    <button type="submit" class="btn btn-info">Buy Now</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+        }
+    </div>*@
+
+@*<div class="container">
+
+        @foreach (var item in Model)
+        {
+            @if (i % 4 == 0)
+            {
+                @if (i != 0)
+                {
+                     @Html.Raw("</div>")
+                }
+                <div class="row">
+                    }
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="block">
+                            <form asp-controller="Products" asp-action="Buy" method="post">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="product">
+                                    <img class="img-responsive" src="@Html.DisplayFor(modelItem => item.Image_front_url)">
+
+                                    <input type="hidden" name="Image_front_url" value="@item.Image_front_url" />
+                                </div>
+                                <div class="info">
+                                    <h4>@Html.DisplayFor(modelItem => item.Product_Name)</h4>
+                                    <input type="hidden" name="Name_Product" value="@item.Name_Product" />
+                                    <span class="description">
+                                        <h>@Html.DisplayFor(modelItem => item.NovaGroup)</h>
+                                        <input type="hidden" name="NovaGroup" value="@item.NovaGroup" />
+                                    </span>
+
+                                    @if (User.Identity.IsAuthenticated)
+                                    {
+                                        <input type="submit" value="Buy" class="btn btn-default" />
+                                    }
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    @i++;
+                </div>
+            }
+        }
+    </div>*@

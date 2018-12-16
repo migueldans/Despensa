@@ -1,0 +1,138 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
+for details on configuring this project to bundle and minify static web assets. */
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
+
+/* QR code generator */
+#qrCode {
+    margin: 15px;
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}
+
+.img-display {
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+    height: 200px;
+    width: 100%;
+    overflow: hidden;
+    object-fit: scale-down;
+    padding: 5px;
+}
+
+.image-main-section {
+    margin-bottom: 20px;
+}
+
+.img-section {
+    padding: 5px;
+}
+
+.img-part {
+    border-radius: 5px;
+    margin: 0px;
+    border: 1px solid #F2F2F2;
+    background-color: #F2F2F2;
+    padding-bottom: 5px;
+}
+
+.image-title h3 {
+    text-align:center;
+    margin: 0px;
+    color: #4C4C4C;
+    padding: 5px;
+}
+
+.nova_group {
+    color: #848484;
+    padding: 5px;
+}
+
+.add-cart-btn {
+    padding: 5px;
+}
+
+.home {
+    position: relative;
+    height: 900px;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.about{
+    position: relative;
+    height: 400px;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.containeer {
+    font-size: 100px;
+    font-style: italic;
+    position: relative;
+    text-align: center;
+    color: black;
+    background-color: #FFB400;
+}
+
+.desplazar_texto{
+    text-align:center;
+    padding-top:100px;
+    padding-left:100px;
+    padding-bottom:100px;
+    padding-right:100px;
+}
+
+.img-centered {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+div span{
+    background-color:yellow;
+}
+li span {
+    color:black;
+    background-color: yellow;
+}

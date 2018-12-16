@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Despensa.Models.despensa>
+
+@{
+    ViewData["Title"] = "Pantry";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Your pantry</h2>
+ 
+<div class="container">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            @foreach (Product product in item.Products)
+            {
+                <div class="col-xs-12 col-sm-6 col-md-3">
+                    <div class="block image-main-section">
+                        <div class="row img-part">
+                            <form asp-controller="Products" asp-action="Buy" method="post">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="product">
+                                    <img class="img-responsive img-display" src="@Html.DisplayFor(modelItem => product.Image_front_url)">
+                                </div>
+                                <div class="info">
+                                    <div class="image-title">
+                                        <h3>@Html.DisplayFor(modelItem => product.Name_Product)</h3>
+                                    </div>
+                                    <div class="nova_group">
+                                        <h>Nova Group: @Html.DisplayFor(modelItem => product.NovaGroup)</h>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+             }
+         }
+    </div>
+</div>
